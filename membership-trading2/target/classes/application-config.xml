@@ -13,10 +13,10 @@
 		
 		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 	        <property name="jdbcUrl" value="${jdbc.url}"></property>
-<!-- 	        <property name="driverClassName" value="${jdbc.driverclassname}"></property> -->
+	        <property name="driverClassName" value="${jdbc.driverClassName}"></property>
 	        <property name="username" value="${jdbc.username}"></property>
 	        <property name="password" value="${jdbc.password}"></property>
-	        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+<!-- 	        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> -->
 <!-- 	        <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.99.100:1521:xe"></property> -->
 <!-- 	        <property name="username" value="hr"></property> -->
 <!-- 	        <property name="password" value="hr"></property> -->

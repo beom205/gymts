@@ -32,6 +32,6 @@ public class SampleController {
 		
 		model.addAttribute("serverTime", sampleService.getEmployee(102) );
 		
-		return "home";
+		return "index";
 	}
 }
