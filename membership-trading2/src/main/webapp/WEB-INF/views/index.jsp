@@ -382,6 +382,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 //                /* id 지정을 통해서도 가능합니다. 
 //                $("#header").load("header.html #navbar")
 //                */       
+
+// 				var uid = sessionStorage.getItem("uid");
+				if (window.sessionStorage) {
+
+// 	                sessionStorage.setItem('저장할 이름 - 문자열', '저장할 객체');
+	                var position = sessionStorage.getItem('uid');
+					console.log("uid : ",position);
+	                
+	            }
              });
        </script>    
 </body>

@@ -4,7 +4,7 @@ import com.mt.gmts.model.Login;
 
 public interface ILoginService {
 
-	public int loginUser(Login login);
+	public boolean loginUser(Login login);
 	
 	
 }

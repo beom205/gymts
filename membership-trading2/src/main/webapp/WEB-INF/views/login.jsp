@@ -103,12 +103,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
      <script type="text/javascript">
            $(document).ready(function(){
-             $("#menu").load("header.html")
+//              $("#menu").load("header.html")
              /* id 지정을 통해서도 가능합니다. 
              $("#header").load("header.html #navbar")
-             */       function insertSubmit(){
-                 alert( ${serverLogin});
-             } //모두 작성시 저장완료
+             */      
+//              function insertSubmit(){
+//                  alert( ${serverLogin});
+//              } //모두 작성시 저장완료
            });
      </script>  
      <script>

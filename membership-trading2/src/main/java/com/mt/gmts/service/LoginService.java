@@ -16,10 +16,17 @@ public class LoginService implements ILoginService {
 
 	
 	@Override
-	public int loginUser(Login login) {
-		String password=null;
-		password=loginRepository.loginUser(login);
-		if(!(login.getPassword()==password)) return 1;
-		if(password=="")return 2;
-		else return 3;
-}}
+	public boolean loginUser(Login login) {
+		String id=null;
+		id=loginRepository.loginUser(login);
+		
+		if(!(login.getId().equals(id))) return false;
+		
+		return true;
+		
+//		if(!(login.getPassword()==password)) return 1;
+//		if(password=="")return 2;
+//		else return 3;
+	}
+	
+}

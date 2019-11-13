@@ -23,6 +23,16 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 		
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String resister(Locale locale, Model model) {
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		return "/register";
+	}
+	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String registerUser(User user, Model model) {
 		
@@ -30,4 +40,11 @@ public class UserController {
 		userService.registerUser(user);
 		return "redirect:/login";
 	}
+	
+	
+	
+	
+
+	
+	
 }
