@@ -47,15 +47,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</a>
 					<br><br>
 					<div id="loginbox" class="loginbox">
-						<form action="" method="post" name="login" id="login-form">
+						<form action="/login" method="post" name="login" id="login-form" onsubmit="return insultSubmit()">
 						  <fieldset class="input">
 						    <p id="login-form-username">
 						      
-						      <input id="modlgn_username"  placeholder="아이디 입력" type="text" name="id" class="inputbox" size="18" autocomplete="off">
+						      <input id="modlgn_username"  placeholder="아이디 입력" type="text" id="id" name="id" class="inputbox" size="18" autocomplete="off">
 						    </p><br>
 						    <p id="login-form-password">
 	
-						      <input id="modlgn_passwd" placeholder="비밀번호 입력" type="password" name="password" class="inputbox" size="18" autocomplete="off">
+						      <input id="modlgn_passwd" placeholder="비밀번호 입력" type="password" password="password" name="password" class="inputbox" size="18" autocomplete="off">
 						    </p>
 						    <div class="remember">
 							   
@@ -106,8 +106,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
              $("#menu").load("header.html")
              /* id 지정을 통해서도 가능합니다. 
              $("#header").load("header.html #navbar")
-             */       
+             */       function insertSubmit(){
+                 alert( ${serverLogin});
+             } //모두 작성시 저장완료
            });
-     </script>    
+     </script>  
+     <script>
+     
+     </script>  
 </body>
 </html>

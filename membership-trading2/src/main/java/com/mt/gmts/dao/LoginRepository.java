@@ -10,24 +10,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.mt.gmts.model.User;
+import com.mt.gmts.model.Login;
 
 @Repository
-public class UserRepository implements IUserRepository {
+public class LoginRepository implements ILoginRepository {
 	
 	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public void registerUser(User user) {
-		String sql = "insert into customer (id, password, email, phone,signup_date) values (?,?,?,?)";
-		jdbcTemplate.update(sql, 
-				user.getId(), 
-				user.getPassword(), 
-				user.getEmail(),
-				user.getPhone()
-	
-
-		);
+	public String loginUser(Login login) {
+		
+		String password="select password from customer where id=login.getId()";
+		return password;
+		
 	}}

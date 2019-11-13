@@ -22,7 +22,7 @@ public class SampleController {
 	@Autowired
 	private SampleService sampleService;
 	
-	@RequestMapping(value = "/sample", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
 		Date date = new Date();
