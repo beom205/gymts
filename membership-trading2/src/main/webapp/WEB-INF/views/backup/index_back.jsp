@@ -82,7 +82,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- end header_bottom -->
 	<!-- start menu -->
     <div class="menu" id="menu">
-    <jsp:include page="/WEB-INF/views/includer/navbar.jsp"/>
+    <jsp:include page="./navbar.jsp"/>
 	  <!-- <div class="container">
 		 <div class="logo">
 			<a href="index.html"><img src="library/basic-theme/images/gmts_logo.png" alt=""/></a>

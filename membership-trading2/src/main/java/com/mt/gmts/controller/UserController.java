@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 
 		
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
 		
 		Date date = new Date();
@@ -23,10 +23,10 @@ public class UserController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "login";
+		return "signin";
 	}
 	
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String resister(Locale locale, Model model) {
 		
 		Date date = new Date();
@@ -36,7 +36,7 @@ public class UserController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "register";
+		return "signup";
 	}
 	
 }
