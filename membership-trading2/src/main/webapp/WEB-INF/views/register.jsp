@@ -56,7 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												</div>
 										<div class="clear"> </div>
 											<a class="news-letter" href="#">
-												<label class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" checked=""><i> </i>이벤트 등 프로모션 알림 메일 수신</label>
+												<label class="checkbox"><input type="checkbox" id="ad_check" name="ad_check" value="1"><i> </i>이벤트 등 프로모션 알림 메일 수신</label>
 											</a>
 										<div class="clear"> </div><br>
 										<div class="subscribe1">

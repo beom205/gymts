@@ -8,7 +8,7 @@ public class User {
 	private String password;//패스워드
 	private String  email;//이메일
 	private String phone;//전화번호
-//	private char ad_check;//광고수락
+	private String ad_check;//광고수락
 //	private Date signup_date;//회원가입날짜
 //	private Date signin_date;//로그인날짜
 	
@@ -37,12 +37,12 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-//	public char getAd_check() {
-//		return ad_check;
-//	}
-//	public void setAd_check(char ad_check) {
-//		this.ad_check = ad_check;
-//	}
+	public String getAd_check() {
+		return ad_check;
+	}
+	public void setAd_check(String ad_check) {
+		this.ad_check = ad_check;
+	}
 //	public Date getSignup_date() {
 //		return signup_date;
 //	}

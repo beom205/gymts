@@ -53,4 +53,11 @@ public class UserTest {
 		String result = loginRepo.loginUser(login);
 		log.info("testLogin : " + result);
 	}
+	@Test
+	public void testcount() {
+		
+		String uno_temp="select count(*) from customer";
+
+		log.info(uno_temp);
+	}
 }

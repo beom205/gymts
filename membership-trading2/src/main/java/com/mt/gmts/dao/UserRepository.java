@@ -21,12 +21,18 @@ public class UserRepository implements IUserRepository {
 	
 	@Override
 	public void registerUser(User user) {
-		String sql = "insert into customer (id, password, email, phone,signup_date) values (?,?,?,?)";
-		jdbcTemplate.update(sql, 
+		
+		String sql = "select count(*) from customer";
+		int uno = jdbcTemplate.queryForObject(sql, Integer.class);
+		
+		sql = "insert into customer (uno,id, password, email, phone, ad_check) values (?,?,?,?,?,?)";
+		jdbcTemplate.update(sql,
+				uno,
 				user.getId(), 
 				user.getPassword(), 
 				user.getEmail(),
-				user.getPhone()
+				user.getPhone(),
+				user.getAd_check()
 	
 
 		);
