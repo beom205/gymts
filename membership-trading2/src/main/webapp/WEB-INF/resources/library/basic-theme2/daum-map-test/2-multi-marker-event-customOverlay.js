@@ -24,7 +24,7 @@ $(function() {
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
     //기본 마커 설정
-    var imageSrc = 'http://127.0.0.1:5501/main/marker.png', // 마커이미지의 주소입니다    
+    var imageSrc = 'http://localhost:8080/library/basic-theme2/main/marker.png', // 마커이미지의 주소입니다    
         imageSize = new kakao.maps.Size(25,35), // 마커이미지의 크기입니다
         imageOption = {offset: new kakao.maps.Point(20, 38)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
             
@@ -33,7 +33,7 @@ $(function() {
         markerPosition = new kakao.maps.LatLng(37.54699, 127.09598); // 마커가 표시될 위치입니다
 
     //오버 마커
-    var overImageSrc = 'http://127.0.0.1:5501/main/marker_over_s.png',
+    var overImageSrc = 'http://localhost:8080/library/basic-theme2/main/marker_over_s.png',
         overImageSize = new kakao.maps.Size(25,35),
         overImageOption = {offset: new kakao.maps.Point(20,38)};
 
@@ -144,7 +144,7 @@ function createOverlay(map, marker, data){
         '        </div>' + 
         '        <div class="body">' + 
         '            <div class="img">' +
-        '                <img src="http://127.0.0.1:5501/main/overlay-sample.jpg" width="230" height="140">' +
+        '                <img src="http://localhost:8080/library/basic-theme2/main/overlay-sample.jpg" width="230" height="140">' +
         '           </div>' + 
         '            <div class="desc">' + 
         '                <div class="ellipsis">서울 강북구 솔샘로 327 테마</div>' + 

@@ -72,7 +72,6 @@
 </section>
 <section class="map1 cid-rHCKrWYRqd" id="map1-8">
     <div id="map" class="google-map" style="width:100%;height:900px; margin-top:70px;">
-        <!-- <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe> -->
     </div>
 </section>
 
