@@ -94,186 +94,100 @@
   	<jsp:include page="/WEB-INF/views/includer/header.jsp"/>
   </section>
 
-<section class="engine"><a href="https://mobirise.info/e">how to make your own website for free</a></section>
-
-<section class="mbr-section form1 cid-rHFp46Dp98" id="form1-7">
-
-    <div class="container ">
-        <div class="card-signup card-body bg-light col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <article class="card-body mx-auto"  >
-                <h4 class="card-title mt-3 text-center">Sign Up</h4>
-                <hr>
-                <br>
-                <!-- <p>
-                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-                </p>
-                <p class="divider-text">
-                    <span class="bg-light">OR</span>
-                </p> -->
-                <!-- <form method="POST" action="/comstr/index.jsp"> -->
-                <form method="POST" action="./cm-home.html">
-                    <!-- 이름 -->
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                        </div>
-                        <input id="id" name="id" class="form-control" maxlength="11"  placeholder="아이디" type="text"  >
-                        <div class="invalid-feedback">
-                                아이디를 입력하세요.
-                        </div>
-                    </div> <!-- form-group// -->
-                    <!-- 이름끝 -->
-                    <!-- 이메일 -->
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                        </div>
-                        <input id="email" name="email" class="form-control " placeholder="이메일" type="email">
-                        <div class="invalid-feedback">
-                                이메일 양식에 맞춰서 입력하세요.
-                        </div>
-                    </div> 
-                    <!-- 이메일 끝-->
-                    <!-- 전화번호 -->
-                    <div id="phoneBox" class="form-group input-group mrg-btm-small">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                        </div>
-                        <input id="phoneNo" name="phoneNo" class="form-control" placeholder="전화번호" type="text" maxlength="11" aria-describedby="phoneHelpBlock">
-                        <div class="invalid-feedback">
-                            '-' 없이 10~11자리 숫자만 입력하세요.
-                        </div>
-                    </div> <!-- form-group// -->
-                        <small id="phoneHelpBlock" class="form-text text-muted mrg-btm-helper">
-                            '-' 없이 숫자만 입력해주세요.
-                        </small>
-                    <!-- 전화번호 끝-->
-                     <!-- 비밀번호 -->
-                     <div id="passwordBox" class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                        <input id="password" name="password" class="form-control" placeholder="비밀번호" type="password" aria-describedby="passwordHelpBlock">
-                        <small id="passwordHelpBlock" class="form-text text-muted ">
-                             8~16자 영문,숫자 1개 이상,특수문자 1개 이상을 사용하세요.
-                        </small>
-                        <div class="invalid-feedback">
-                                8~16자 영문, 숫자 1개 이상, 특수문자 1개 이상을 사용하세요.
-                        </div>   
-                    </div> <!-- form-group// -->
-                    <!-- 비밀번호  끝-->
-                    <!-- 비밀번호 확인 -->
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                        <input id="passwordCheck" name="passwordCheck" class="form-control" placeholder="비밀번호 확인" type="password">
-                        <div class="invalid-feedback">
-                                비밀번호가 일치하지 않습니다.
-                        </div>   
-                    </div>   
-                    <!-- 비밀번호 확인 끝-->
-                    <div class="form-group">
-                        <!-- <button id="submitBtn" type="submit" class="btn btn-primary btn-block"> 회원가입하기  </button> -->
-                        <button id="submitBtn" type="button" class="btn btn-primary btn-block" style="margin-left: 0px;     padding:0.6em;"> 회원 가입  </button>
-                    </div> <!-- form-group// -->      
-                </form>
-            </article>
-        </div> <!-- card.// -->
-    </div> 
-</section>
-<section class="cid-qTkAaeaxX5" id="footer1-2">
-
-  <div class="container">
-      <div class="media-container-row content text-white">
-          <div class="col-12 col-md-3">
-              <div class="media-wrap">
-                  <a href="https://mobirise.com/">
-                      <img src="assets/images/logo2.png" alt="Mobirise">
-                  </a>
-              </div>
-          </div>
-          <div class="col-12 col-md-3 mbr-fonts-style display-7">
-              <h5 class="pb-3">
-                  Address
-              </h5>
-              <p class="mbr-text">
-                  1234 Street Name
-                  <br>City, AA 99999
-              </p>
-          </div>
-          <div class="col-12 col-md-3 mbr-fonts-style display-7">
-              <h5 class="pb-3">
-                  Contacts
-              </h5>
-              <p class="mbr-text">
-                  Email: support@mobirise.com
-                  <br>Phone: +1 (0) 000 0000 001
-                  <br>Fax: +1 (0) 000 0000 002
-              </p>
-          </div>
-          <div class="col-12 col-md-3 mbr-fonts-style display-7">
-              <h5 class="pb-3">
-                  Links
-              </h5>
-              <p class="mbr-text">
-                  <a class="text-primary" href="https://mobirise.com/">Website builder</a>
-                  <br><a class="text-primary" href="https://mobirise.com/mobirise-free-win.zip">Download for Windows</a>
-                  <br><a class="text-primary" href="https://mobirise.com/mobirise-free-mac.zip">Download for Mac</a>
-              </p>
-          </div>
-      </div>
-      <div class="footer-lower">
-          <div class="media-container-row">
-              <div class="col-sm-12">
-                  <hr>
-              </div>
-          </div>
-          <div class="media-container-row mbr-white">
-              <div class="col-sm-6 copyright">
-                  <p class="mbr-text mbr-fonts-style display-7">
-                      © Copyright 2017 Mobirise - All Rights Reserved
-                  </p>
-              </div>
-              <div class="col-md-6">
-                  <div class="social-list align-right">
-                      <div class="soc-item">
-                          <a href="https://twitter.com/mobirise" target="_blank">
-                              <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
-                          </a>
-                      </div>
-                      <div class="soc-item">
-                          <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
-                              <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                          </a>
-                      </div>
-                      <div class="soc-item">
-                          <a href="https://www.youtube.com/c/mobirise" target="_blank">
-                              <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                          </a>
-                      </div>
-                      <div class="soc-item">
-                          <a href="https://instagram.com/mobirise" target="_blank">
-                              <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                          </a>
-                      </div>
-                      <div class="soc-item">
-                          <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
-                              <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                          </a>
-                      </div>
-                      <div class="soc-item">
-                          <a href="https://www.behance.net/Mobirise" target="_blank">
-                              <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+	<section class="engine"><a href="https://mobirise.info/e">how to make your own website for free</a></section>
+	
+	<section class="mbr-section form1 cid-rHFp46Dp98" id="form1-7">
+	
+	    <div class="container ">
+	        <div class="card-signup card-body bg-light col-sm-9 col-md-7 col-lg-5 mx-auto">
+	            <article class="card-body mx-auto"  >
+	                <h4 class="card-title mt-3 text-center">Sign Up</h4>
+	                <hr>
+	                <br>
+	                <!-- <p>
+	                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+	                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+	                </p>
+	                <p class="divider-text">
+	                    <span class="bg-light">OR</span>
+	                </p> -->
+	                <!-- <form method="POST" action="/comstr/index.jsp"> -->
+	                <form method="POST" action="./cm-home.html">
+	                    <!-- 이름 -->
+	                    <div class="form-group input-group">
+	                        <div class="input-group-prepend">
+	                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+	                        </div>
+	                        <input id="id" name="id" class="form-control" maxlength="11"  placeholder="ID" type="text"  >
+	                        <div class="invalid-feedback">
+	                                아이디를 입력하세요.
+	                        </div>
+	                    </div> <!-- form-group// -->
+	                    <!-- 이름끝 -->
+	                    <!-- 이메일 -->
+	                    <div class="form-group input-group">
+	                        <div class="input-group-prepend">
+	                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+	                        </div>
+	                        <input id="email" name="email" class="form-control " placeholder="Email" type="email">
+	                        <div class="invalid-feedback">
+	                                이메일 양식에 맞춰서 입력하세요.
+	                        </div>
+	                    </div> 
+	                    <!-- 이메일 끝-->
+	                    <!-- 전화번호 -->
+	                    <div id="phoneBox" class="form-group input-group mrg-btm-small">
+	                        <div class="input-group-prepend">
+	                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+	                        </div>
+	                        <input id="phoneNo" name="phoneNo" class="form-control" placeholder="Phone number" type="text" maxlength="11" aria-describedby="phoneHelpBlock">
+	                        <div class="invalid-feedback">
+	                            '-' 없이 10~11자리 숫자만 입력하세요.
+	                        </div>
+	                    </div> <!-- form-group// -->
+	                        <small id="phoneHelpBlock" class="form-text text-muted mrg-btm-helper">
+	                            '-' 없이 숫자만 입력해주세요.
+	                        </small>
+	                    <!-- 전화번호 끝-->
+	                     <!-- 비밀번호 -->
+	                     <div id="passwordBox" class="form-group input-group">
+	                        <div class="input-group-prepend">
+	                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+	                        </div>
+	                        <input id="password" name="password" class="form-control" placeholder="password" type="password" aria-describedby="passwordHelpBlock">
+	                        <small id="passwordHelpBlock" class="form-text text-muted ">
+	                             8~16자 영문,숫자 1개 이상,특수문자 1개 이상을 사용하세요.
+	                        </small>
+	                        <div class="invalid-feedback">
+	                                8~16자 영문, 숫자 1개 이상, 특수문자 1개 이상을 사용하세요.
+	                        </div>   
+	                    </div> <!-- form-group// -->
+	                    <!-- 비밀번호  끝-->
+	                    <!-- 비밀번호 확인 -->
+	                    <div class="form-group input-group">
+	                        <div class="input-group-prepend">
+	                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+	                        </div>
+	                        <input id="passwordCheck" name="passwordCheck" class="form-control" placeholder="Check Password" type="password">
+	                        <div class="invalid-feedback">
+	                                비밀번호가 일치하지 않습니다.
+	                        </div>   
+	                    </div>   
+	                    <!-- 비밀번호 확인 끝-->
+	                    <div class="form-group">
+	                        <!-- <button id="submitBtn" type="submit" class="btn btn-primary btn-block"> 회원가입하기  </button> -->
+	<!--                         <button id="submitBtn" type="button" class="btn btn-primary btn-block" style="margin-left: 0px;     padding:0.6em;"> Sign Up   </button> -->
+	                        <button id="submitBtn" type="button" class="btn btn-primary btn-block text-uppercase" style="margin-left: 0px;     padding:0.6em;"> Sign Up   </button>
+	                    </div> <!-- form-group// -->      
+	                </form>
+	            </article>
+	        </div> <!-- card.// -->
+	    </div> 
+	</section>
+	<section class="cid-qTkAaeaxX5" id="footer1-2">
+		<jsp:include page="/WEB-INF/views/includer/footer.jsp"/>
+	 
+	</section>
 
   <script src="/library/basic-theme2/assets/web/assets/jquery/jquery.min.js"></script>
   <script src="/library/basic-theme2/assets/popper/popper.min.js"></script>

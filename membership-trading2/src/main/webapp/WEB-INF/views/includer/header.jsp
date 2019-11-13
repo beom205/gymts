@@ -25,24 +25,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
           <li class="nav-item dropdown">
-                <a class="nav-link link text-white dropdown-toggle display-7" href="https://mobirise.com" data-toggle="dropdown-submenu" aria-expanded="true"><span class="mobi-mbri mobi-mbri-cash mbr-iconfont mbr-iconfont-btn"></span>
+                <a class="nav-link link text-white dropdown-toggle display-7" href="https://mobirise.com" data-toggle="dropdown-submenu" aria-expanded="true">
+                <span class="mobi-mbri mobi-mbri-cash mbr-iconfont mbr-iconfont-btn"></span>
                     Trade&nbsp;</a><div class="dropdown-menu">
                       <a class="text-white dropdown-item display-7" href="https://mobirise.com">Buy</a>
                       <a class="text-white dropdown-item display-7" href="https://mobirise.com" aria-expanded="false">Sale</a>
-                      <a class="text-white dropdown-item display-7" href="https://mobirise.com" aria-expanded="false">Show Map</a></div>
           </li>
           <li class="nav-item">
-            <a class="nav-link link text-white display-7" href="https://mobirise.com"><span class="mobi-mbri mobi-mbri-cash mbr-iconfont mbr-iconfont-btn"></span>
-                    Trade&nbsp;
+            <a class="nav-link link text-white display-7" href="/map">
+<!--             <span class="mobi-mbri mobi-mbri-cash mbr-iconfont mbr-iconfont-btn"></span> -->
+            <span class="mobi-mbri mobi-mbri-map-pin mbr-iconfont mbr-iconfont-btn"></span>
+                    Map&nbsp;
             </a>
           </li>
           <li class="nav-item"><a class="nav-link link text-white display-7" href="/signin"><span class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
-                    Sign in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></li></ul>
-        <div class="navbar-buttons mbr-section-btn">
-            <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com">
-                <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span>
-                Try It Now!
-            </a>
-        </div>
+                    Sign in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></li>
+       </ul>
+<!--         <div class="navbar-buttons mbr-section-btn"> -->
+<!--             <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com"> -->
+<!--                 <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span> -->
+<!--                 Try It Now! -->
+<!--             </a> -->
+<!--         </div> -->
     </div>
 </nav>

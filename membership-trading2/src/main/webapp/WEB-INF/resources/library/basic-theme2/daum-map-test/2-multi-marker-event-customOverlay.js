@@ -7,15 +7,15 @@ var overlay;
 $(function() {
 
     var positions = [  // 마커의 위치
-            new kakao.maps.LatLng(33.44975, 126.56967),
-            new kakao.maps.LatLng(33.450579, 126.56956),
-            new kakao.maps.LatLng(33.4506468, 126.5707)
+            new kakao.maps.LatLng(37.498509, 127.035882),
+            new kakao.maps.LatLng(37.504066, 127.040130),
+            new kakao.maps.LatLng(37.501070, 127.040245)
         ],
         selectedMarker = null; // 클릭한 마커를 담을 변수
 
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = { 
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(37.501283, 127.039505), // 지도의 중심좌표
             level: 3 // 지도의 확대 레벨
         };
 
