@@ -5,8 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.mt.gmts.mapper.SampleMapper">
 	
 	<select id="getEmployee" parameterType="int" resultType="string">
-		SELECT first_name 
-		  FROM employees
-		 WHERE employee_id = #{employeeId} 
+<!-- 		SELECT first_name  -->
+<!-- 		  FROM employees -->
+<!-- 		 WHERE employee_id = #{employeeId}  -->
+		SELECT sysdate 
+		FROM dual
 	</select>
 </mapper>
