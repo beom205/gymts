@@ -36,4 +36,9 @@ public class BoardService implements IBoardService {
 		
 	}
 
+	@Override
+	public List<board_dto> boardall() throws Exception {
+		return board.boardall();
+	}
+
 }

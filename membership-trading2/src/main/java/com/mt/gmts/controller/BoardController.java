@@ -42,5 +42,12 @@ public class BoardController {
 		boardService.setboard(dto);
 		return "home";
 	}
+	
+	@RequestMapping(value = "/boardall", method = RequestMethod.GET)
+	public String boardpring(Locale locale, Model model) throws Exception{
+		model.addAttribute("list", boardService.boardall());
+		log.info("" + boardService.boardall());
+		return "home2";
+	}
 
 }

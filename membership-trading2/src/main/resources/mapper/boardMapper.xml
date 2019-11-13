@@ -30,9 +30,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="setboard" parameterType = "com.mt.gmts.model.board_dto">
-			INSERT INTO result_table(title, context, reg_data, view_count, board_img_path, choice, price, user_id, user_email, user_phone, user_img_path, gym_name, gym_phone, address, homepage)
-			VALUES(#{title}, #{context}, #{reg_data}, #{view_count}, #{board_img_path}, #{choice}, #{price}, #{user_id}, #{user_email}, #{user_phone}, #{user_img_path}, #{gym_name}, #{gym_phone}, #{address}, #{homepage})
+			INSERT INTO result_table(title, context, reg_data, view_count, board_img_path, choice, price, user_id, user_email, user_phone, user_img_path, gym_name, gym_phone, address, homepage, bno)
+			VALUES(#{title}, #{context}, #{reg_data}, #{view_count}, #{board_img_path}, #{choice}, #{price}, #{user_id}, #{user_email}, #{user_phone}, #{user_img_path}, #{gym_name}, #{gym_phone}, #{address}, #{homepage}, #{bno})
 	</select>
+	
+	<select id="boardall" resultType = "com.mt.gmts.model.board_dto">
+		select *
+		from result_table
+	</select>
+	
+	
 	
 	
 </mapper>

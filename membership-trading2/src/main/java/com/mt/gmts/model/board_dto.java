@@ -28,8 +28,19 @@ public class board_dto {
 	private String address = "null";
 	private String homepage = "null";
 	
+	public int bno = 0;
 	
 	
+	public int getBno() {
+		return bno;
+	}
+
+
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+
+
 	@Override
 	public String toString() {
 		return "board_dto [title=" + title + ", context=" + context + ", reg_data=" + reg_data + ", view_count="

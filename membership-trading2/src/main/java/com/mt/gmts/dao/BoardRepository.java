@@ -35,4 +35,9 @@ public class BoardRepository implements IBoardRepository{
 		
 	}
 
+	@Override
+	public List<board_dto> boardall() throws Exception {
+		return boardMapper.boardall();
+	}
+
 }

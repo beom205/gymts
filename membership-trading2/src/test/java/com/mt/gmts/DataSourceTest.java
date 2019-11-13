@@ -89,7 +89,7 @@ public class DataSourceTest {
 //		log.info(sampleRepository.getEmployee(102));
 //		log.info(sampleMapper.getEmployee(102));
 //		log.info(sampleService.getEmployee(102));
-		log.info(boardMapper.getAll(1));
+		log.info(boardMapper.boardall());
 	}
 	
 	@Test
