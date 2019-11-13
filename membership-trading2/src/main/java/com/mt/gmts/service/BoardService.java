@@ -1,37 +1,38 @@
-package com.mt.gmts.dao;
+package com.mt.gmts.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.mt.gmts.dao.BoardRepository;
 import com.mt.gmts.model.board_dto;
 
-@Repository
-public class BoardRepository implements IBoardRepository{
+@Service
+public class BoardService implements IBoardService {
 
 	@Autowired
-	private com.mt.gmts.mapper.boardMapper boardMapper;
+	private BoardRepository board;
 
 	@Override
 	public int getUno(String id) throws Exception {
-		return boardMapper.getUno(id);
-		
+		return board.getUno(id);
 	}
 
 	@Override
 	public int getGno(String name) throws Exception {
-		return boardMapper.getGno(name);
+		return board.getGno(name);
 	}
 
 	@Override
 	public board_dto getAll(int uno) throws Exception {
-		return boardMapper.getAll(uno);
+		return board.getAll(uno);
 	}
 
 	@Override
 	public void setboard(board_dto board_dto) throws Exception {
-		boardMapper.setboard(board_dto);
+		board.setboard(board_dto);
 		
 	}
 

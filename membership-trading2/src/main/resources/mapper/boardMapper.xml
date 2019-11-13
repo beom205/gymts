@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mt.gmts.mapper.boardMapper">
+	<select id="getGno" parameterType = "String" resultType = "int">
+		SELECT gno
+		FROM gym
+		WHERE name = #{name}
+	</select>
+	
+	<select id="getUno" parameterType = "String" resultType ="int">
+		SELECT uno
+		FROM customer
+		WHERE id = #{id}
+	</select>
+	
+	<select id="getAll" parameterType = "int" resultType = "com.mt.gmts.model.board_dto">
+<!-- 		SELECT board.title, board.context, board.price, board.choice, board.reg_data,  -->
+<!-- 			board.img_path, board.view_count,customer.id, customer.email, customer.phone -->
+<!-- 		FROM customer -->
+<!-- 			JOIN board -->
+<!-- 			ON board.uno = customer.uno  -->
+<!-- 		WHERE board.uno = #{uno}  -->
+
+			select board.title, board.context, board.price, board.choice, board.reg_data, board.img_path, board.view_count,
+					customer.id as user_id, customer.email as user_email, customer.phone as user_phone
+			from customer, board
+			where board.uno = #{uno} and board.uno = customer.uno
+	</select>
+	
+	<select id="setboard" parameterType = "com.mt.gmts.model.board_dto">
+			INSERT INTO result_table(title, context, reg_data, view_count, board_img_path, choice, price, user_id, user_email, user_phone, user_img_path, gym_name, gym_phone, address, homepage)
+			VALUES(#{title}, #{context}, #{reg_data}, #{view_count}, #{board_img_path}, #{choice}, #{price}, #{user_id}, #{user_email}, #{user_phone}, #{user_img_path}, #{gym_name}, #{gym_phone}, #{address}, #{homepage})
+	</select>
+	
+	
+</mapper>

@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<%@ page language = "java" contentType = "text/html; charset=UTF-8" pageEncoding = "UTF-8" %>
+<% String context = request.getContextPath(); %>
 <html>
 <head>
 	<title>Home</title>
@@ -9,6 +11,14 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>${title}</P>
+<p>${context}</p>
+<p>${test}</p>
+
+<form action= "<%=context%>/board" method = "post">
+	<input type = "text" name = "title"><br>
+	<input type = "text" name = "context"><br>
+	<input type = "submit" value = "send">
+</form>
 </body>
 </html>
