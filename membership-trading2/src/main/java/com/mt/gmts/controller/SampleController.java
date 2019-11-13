@@ -26,7 +26,7 @@ public class SampleController {
 	private SampleService sampleService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model, HttpServletRequest request) {
 		
 		HttpSession session =  request.getSession();
 		
