@@ -45,12 +45,12 @@
 	                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">
 	                   		 하루하루 없어지는 회원권을 판매해보세요
 	                </h3>
-	                <p class="mbr-text pb-3 mbr-fonts-style display-5">
-	                    1년에 36만원, 한달에 3만원하는 회원권
-	                    Click any text to edit or style it. Select text to insert a link. Click blue "Gear" icon
-	                     in the top right corner to hide/show buttons, text, title and change the block background. 
-	                     Click red "+" in the bottom right corner to add a new block. Use the top left menu to create new pages, sites and add themes.
-	                </p>
+<!-- 	                <p class="mbr-text pb-3 mbr-fonts-style display-5"> -->
+<!-- 	                    1년에 36만원, 한달에 3만원하는 회원권 -->
+<!-- 	                    Click any text to edit or style it. Select text to insert a link. Click blue "Gear" icon -->
+<!-- 	                     in the top right corner to hide/show buttons, text, title and change the block background.  -->
+<!-- 	                     Click red "+" in the bottom right corner to add a new block. Use the top left menu to create new pages, sites and add themes. -->
+<!-- 	                </p> -->
 	                <div class="mbr-section-btn">
 	                    <a class="btn btn-md btn-secondary display-4" href="https://mobirise.com">SALE</a>
 	                    <a class="btn btn-md btn-white-outline display-4" href="https://mobirise.com">BUY</a>

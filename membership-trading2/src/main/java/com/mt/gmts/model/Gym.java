@@ -8,7 +8,7 @@ public class Gym {
 	private int gno;
 	private String name;
 	private String address;
-	private int phone;
+	private String phone;
 	private String homepage;
 	private double latitude;
 	private double longitude;
@@ -30,10 +30,11 @@ public class Gym {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getPhone() {
+
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getHomepage() {

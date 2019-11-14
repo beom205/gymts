@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mt.gmts.mapper.ShowMapMapper">
+
+	<select id="searchGym" parameterType="string" resultType="com.mt.gmts.model.Gym">
+		SELECT gno, name, address,phone, homepage, latitude, longitude
+		 FROM gym
+		WHERE name LIKE '%'|| #{param} || '%'
+	</select>
+	
+</mapper>

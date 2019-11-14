@@ -44,13 +44,13 @@ public class UserTest {
 	public void testLogin() {
 		
 		Login login = new Login();
-		login.setId("1");
-		login.setPassword("asdfasdf");
+		login.setId("ssss");
+		login.setPassword("asdfasdf1!");
 		
 		
 //		loginRepo.loginUser(login);
 //		String result = loginMap.loginUser(login);
-		login = loginRepo.loginUser(login);
+		login = loginRepo.loginUser(login.getId());
 		
 		log.info("testLogin : " + login);
 //		log.info("testLogin : " + loginMap.loginUser("steven"));
