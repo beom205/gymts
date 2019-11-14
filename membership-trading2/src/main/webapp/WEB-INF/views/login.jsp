@@ -111,6 +111,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 //              function insertSubmit(){
 //                  alert( ${serverLogin});
 //              } //모두 작성시 저장완료
+
+				
            });
      </script>  
      <script>

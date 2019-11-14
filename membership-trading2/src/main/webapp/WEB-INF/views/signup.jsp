@@ -112,7 +112,7 @@
 	                    <span class="bg-light">OR</span>
 	                </p> -->
 	                <!-- <form method="POST" action="/comstr/index.jsp"> -->
-	                <form method="POST" action="./cm-home.html">
+	                <form method="POST" action="http://70.12.229.181:8080/signup">
 	                    <!-- 이름 -->
 	                    <div class="form-group input-group">
 	                        <div class="input-group-prepend">
@@ -140,7 +140,7 @@
 	                        <div class="input-group-prepend">
 	                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 	                        </div>
-	                        <input id="phoneNo" name="phoneNo" class="form-control" placeholder="Phone number" type="text" maxlength="11" aria-describedby="phoneHelpBlock">
+	                        <input id="phoneNo" name="phone" class="form-control" placeholder="Phone number" type="text" maxlength="11" aria-describedby="phoneHelpBlock">
 	                        <div class="invalid-feedback">
 	                            '-' 없이 10~11자리 숫자만 입력하세요.
 	                        </div>
@@ -177,7 +177,7 @@
 	                    <div class="form-group">
 	                        <!-- <button id="submitBtn" type="submit" class="btn btn-primary btn-block"> 회원가입하기  </button> -->
 	<!--                         <button id="submitBtn" type="button" class="btn btn-primary btn-block" style="margin-left: 0px;     padding:0.6em;"> Sign Up   </button> -->
-	                        <button id="submitBtn" type="button" class="btn btn-primary btn-block text-uppercase" style="margin-left: 0px;     padding:0.6em;"> Sign Up   </button>
+	                        <button id="submitBtn" type="submit" class="btn btn-primary btn-block text-uppercase" style="margin-left: 0px;     padding:0.6em;"> Sign Up   </button>
 	                    </div> <!-- form-group// -->      
 	                </form>
 	            </article>
@@ -201,8 +201,12 @@
   <script src="/library/basic-theme2/assets/tether/tether.min.js"></script>
   <script src="/library/basic-theme2/assets/theme/js/script.js"></script>
   <script src="/library/basic-theme2/assets/formoid/formoid.min.js"></script>
+  
+    <jsp:include page="/WEB-INF/views/includer/checker.jsp"/>
   <script>
       $(document).ready(function(){
+
+    	  ckLoggedIn();
 //        $("#menu1-0").load("http://127.0.0.1:5501/hearder.html")
 //                /* id 지정을 통해서도 가능합니다. 
 //                $("#header").load("header.html #navbar")
@@ -333,21 +337,21 @@ var $name = $('#name');
             }
         });
 
-        $('#submitBtn').on('click',function(){
-          //입력된 값이 틀렸으면 
-          if(confirm == false) {
-            alert("정보를 제대로 입력하세요.");
-            return false;
-          }else{ //맞았으면
-            alert("회원가입 정보 : " + "이름 : " + dataAll.name + "\n" 
-                  + " 이메일 : " + dataAll.email + "\n"
-                  + " 전화번호 : " + dataAll.phoneNo + "\n"
-                  + " 성별 : " + dataAll.gender + "\n"
-                  + " 생년월일 : " + dataAll.birth + "\n"
-                  + " 비밀번호 : " + dataAll.password
-                    )
-          }
-        });
+//         $('#submitBtn').on('click',function(){
+//           //입력된 값이 틀렸으면 
+//           if(confirm == false) {
+//             alert("정보를 제대로 입력하세요.");
+//             return false;
+//           }else{ //맞았으면
+//             alert("회원가입 정보 : " + "이름 : " + dataAll.name + "\n" 
+//                   + " 이메일 : " + dataAll.email + "\n"
+//                   + " 전화번호 : " + dataAll.phoneNo + "\n"
+//                   + " 성별 : " + dataAll.gender + "\n"
+//                   + " 생년월일 : " + dataAll.birth + "\n"
+//                   + " 비밀번호 : " + dataAll.password
+//                     )
+//           }
+//         });
         function chkEmail(str) {
             var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
             if (regExp.test(str)) return true;
