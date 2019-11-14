@@ -92,8 +92,12 @@
   <!-- <script src="map-service.js"></script> -->
   <!-- <script src="main-map.js"></script> -->
   <!-- <script src="daum-map-test/1-multi-marker-event.js"></script> -->
+    <jsp:include page="/WEB-INF/views/includer/checker.jsp"/>
   <script>
         $(document).ready(function(){
+
+
+        	ckLoggedIn(); 
 //          $("#menu1-0").load("localhost:8080/hearder.html");
                /* id 지정을 통해서도 가능합니다. 
                $("#header").load("header.html #navbar")

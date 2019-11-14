@@ -1,14 +1,19 @@
 package com.mt.gmts.controller;
 
 
+import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,21 +35,38 @@ public class LoginController {
 		return "signin";
 	}
 	
-	@RequestMapping(value="/signin", method=RequestMethod.POST)
-	public String loginUser(Login login, Model model, HttpServletRequest request) {
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession();
+//		String clientID = (String)session.getAttribute("cID");
+		session.invalidate();
+//		if(clientID != null){
+//			return true;
+//		}
+		return "index"; 
+	}
+	
+	@RequestMapping(value="/signin", method=RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	public ResponseEntity<HashMap<String,Object>> loginUser(@RequestBody Login login, Model model, HttpServletRequest request) {
 		
-		
-		log.info("/login : " + login);
+		log.info("/signin : " + login);
 		
 		HttpSession session =  request.getSession();
 		
-		boolean result=loginService.loginUser(login);
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		boolean result= false;
+		
+		result = loginService.loginUser(login);
 		
 		if(result) {
 			 session.setAttribute("uid", login.getId());
-			return "redirect:/";
+			 log.info("로그인완료");
+			 resultMap.put("result", true);
+			return new ResponseEntity<HashMap<String,Object>>(resultMap, HttpStatus.OK);
 		}else {
-			return "redirect:/register";
+			resultMap.put("result", false);
+			return new ResponseEntity<HashMap<String,Object>>(resultMap, HttpStatus.OK);
 		}
 		
 //		  if(result==1) {model.addAttribute("serverLogin","비밀번호가 틀렸습니다."); return

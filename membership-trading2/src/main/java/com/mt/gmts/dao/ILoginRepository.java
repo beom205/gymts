@@ -8,7 +8,7 @@ import com.mt.gmts.model.Login;
 
 public interface ILoginRepository {
 	
-	public String loginUser(Login login);
+	public Login loginUser(String id);
 	
 
 }

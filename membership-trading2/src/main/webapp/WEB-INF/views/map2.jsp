@@ -163,6 +163,8 @@
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b88f73c214829c5ab902ccaa171c4747"></script>
   
 <!--   <script src="/library/basic-theme2/daum-map-test/2-multi-marker-event-customOverlay.js"></script> -->
+	  <jsp:include page="/WEB-INF/views/includer/checker.jsp"/>
+
   <script src="/js/search-map.js"></script>
   <script>
 	

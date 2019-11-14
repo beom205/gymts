@@ -2,12 +2,16 @@ package com.mt.gmts.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import com.mt.gmts.dao.ILoginRepository;
 import com.mt.gmts.model.Login;
 
+import lombok.extern.java.Log;
+
 
 @Service
+@Log
 public class LoginService implements ILoginService {
 	
 
@@ -18,15 +22,22 @@ public class LoginService implements ILoginService {
 	@Override
 	public boolean loginUser(Login login) {
 		String id=null;
-		id=loginRepository.loginUser(login);
+		Login resultLogin = new Login();
+		resultLogin =loginRepository.loginUser(login.getId());
 		
-		if(!(login.getId().equals(id))) return false;
+//		log.info("loginUser : " + resultLogin);
 		
-		return true;
-		
-//		if(!(login.getPassword()==password)) return 1;
-//		if(password=="")return 2;
-//		else return 3;
+		//아이디가 없거나 비밀번호가 다르면 false
+		if(ObjectUtils.isEmpty(resultLogin)) {
+				return false;
+		}else {
+			//아이디가 있고 비밀번호가 맞으면 true
+			if(login.getPassword().equals(resultLogin.getPassword())) {
+				return true;
+			}else { //아이디가 있지만 비번이 다르면
+				return false;
+			}
+		}
 	}
 	
 }
