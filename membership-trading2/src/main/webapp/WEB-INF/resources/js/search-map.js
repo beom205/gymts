@@ -4,6 +4,7 @@
 
 $(function() { 
 	
+	ckLoggedIn();
 	
 	var mapContainer = document.getElementById('map'),
 	    mapOption = { 

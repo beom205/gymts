@@ -27,14 +27,11 @@ public class LoginRepository implements ILoginRepository {
 	LoginMapper loginMapper;
 	
 	@Override
-	public String loginUser(Login login) {
+	public Login loginUser(String id) {
 		
-//		String password="select password from customer where id=?";
-		String result = null;
-		result = loginMapper.loginUser(login);
+		Login resultLogin = new Login();
+		resultLogin= loginMapper.loginUser(id);
 		
-//		log.info("login Repo : " + result);
-		
-		return result;
+		return resultLogin;
 		
 	}}

@@ -58,7 +58,7 @@
 	              <div class="card-body">
 	                <h4 class="card-title mt-3 text-center">Sign In</h4>
 	                <hr class="my-4">
-	                <form class="form-signin" action="/signin" method="post" name="login" id="login-form" onsubmit="return insultSubmit()">
+	                <form class="form-signin " action="/signin" method="post" name="login" id="login-form" >
 	                  <div class="form-label-group">
 	                    <input type="text" id="id"  name="id" class="form-control" placeholder="아이디 입력" autocomplete="off" required autofocus>
 	                    <label for="id">ID</label>
@@ -68,12 +68,16 @@
 	                    <input type="password" id="inputPassword"  name="password" class="form-control" placeholder="비밀번호 입력" required>
 	                    <label for="inputPassword">Password</label>
 	                  </div>
+	                  <div id="invalid-str" class="invalid-feedback">
+	                       	이메일 혹은 비밀번호를 확인하세요.	         	
+                        </div>
 	                  
 	<!--     				<a target="_blank" id="join" href="/register">회원가입</a></div> -->
 	                  <div class="custom-control mb-3">
 	                    <label class="custom-control-label" for="customCheck1">Remember Me</label>
 	                  </div>
-	                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+	                  
+	                  <button id="login-btn" class="btn btn-lg btn-primary btn-block text-uppercase" type="button">Sign in</button>
 	                	<div class="mt-4 text-center">
 							Don't have an account? <a href="/signup">Create One</a>
 						</div>
@@ -102,191 +106,136 @@
   <script src="/library/basic-theme2/assets/tether/tether.min.js"></script>
   <script src="/library/basic-theme2/assets/theme/js/script.js"></script>
   <script src="/library/basic-theme2/assets/formoid/formoid.min.js"></script>
+  
+  <jsp:include page="/WEB-INF/views/includer/checker.jsp"/>
   <script>
       $(document).ready(function(){
+
+    	  console.log("gUid : ", gUid);
 //        $("#menu1-0").load("http://127.0.0.1:5501/hearder.html")
 //                /* id 지정을 통해서도 가능합니다. 
 //                $("#header").load("header.html #navbar")
 //                */      
 
+		ckLoggedIn();
 
-			var $name = $('#name');
-			        var $email = $('#email');
-			        var $phoneNo = $('#phoneNo');
-			        var $gender = $('#gender');
-			        var $birth = $('#birth');
-			        var $password = $('#password');
-			        var $passwordCheck = $('#passwordCheck');
+			$('#login-btn').on('click',function(){
+				//로그인이 정상적으로 완료되면 로그인 페이지를 호출한 곳으로 이동
+				if(checkLoginForm()){ 
+					console.log("로그인 완료?")
+					location.href="http://70.12.229.181:8080/";			
+				}
+			});
+
+			//로그인 이메일,비번 체크 후 로그인
+			function checkLoginForm() {
+				var id = $('#id').val(),
+					password = $('#inputPassword').val();
+// 				$("#login_invalid").css("display","none");
+// 				if (isEmpty(password)) {
+// 					$("#login_invalid").css("display","block");
+// 					return false;
+// 				}
+				return doLogin(id, password);
+			}
+
+			//로그인 
+			function doLogin(userId, password) {
+				var url = 'http://70.12.229.181:8080/signin';
+				var loginData = {
+					id : userId,
+					password : password
+				};
+				var result;
+				$.ajax({
+					cache : false,
+					async : false,
+					type : 'POST',
+					url : url,
+					headers : {
+						'Accept' : 'application/json',
+						'Content-Type' : 'application/json'
+					},
+					dataType : 'json',
+					data : JSON.stringify(loginData),
+					beforeSend : function() {
+						//$('#login_email, #login_pw').css('color', '#85c7d3');
+					},
+					success : function(data) {
+						console.log("login success data : ",data);
+						result = data.result;
+						if (result == false) {
+							console.log("로그인 실패");
+							 $("#id").addClass('is-invalid');
+							 $("#inputPassword").addClass('is-invalid');
+							 document.getElementById("invalid-str").style.display="inline-block";
+// 							$("#login_invalid").css("display","block");
+						} else {
+							
+						}
+					},
+					error : function(jqXHR,status, errorThrown) {
+						if(errorThrown == "Unauthorized"){
+							var ob = jqXHR.responseJSON;
+							console.log("ob : "+ ob.text);
+							console.log("이메일 인증 및 재발송 페이지로 이동 필요, 구현해야함");
+						}
+						$("#login_invalid").css("display","block");
+						result = false;
+					}
+				});
+				return result;
+			}
+
+			//DestUrl 체크
+			//올바른 값이 있으면 true, 없거나, login페이지면 false
+			function isDestUrl(){
+				var nowUrl = window.location.href;
+				if(isBlank(destUrl) || destUrl == nowUrl){
+					return false;
+				}
+				return true;
+			}
+
 			
-			        //입력된 값 유효성 검사. true여야 제출됨
-			        var confirm = false;
-			
-			        //입력한 고객 정보 담는 객체(Object) 
-			        var dataAll = {};
-			
-			        // is-invalid
-			        //포커스아웃으로 유효성검사
-			        //이름
-			        $name.on('focusout',function(){
-			            //값 검사
-			            var nameVal = $name.val();
-			            if(isBlank(nameVal)){
-			                $name.addClass('is-invalid');
-			                confirm = false;
-			            }else{
-			                $name.removeClass('is-invalid');
-			                dataAll.name = nameVal;
-			                confirm = true;
-			            }
-			        });
-			
-			        //이메일
-			        $email.on('focusout',function(){
-			            //값 검사
-			            var emailVal = $email.val();
-			            if(!chkEmail(emailVal)){
-			                $email.addClass('is-invalid');
-			                confirm = false;
-			            }else{
-			                $email.removeClass('is-invalid');
-			                dataAll.email = emailVal;
-			                confirm = true;
-			            }
-			        });
-			
-			        //폰
-			        $phoneNo.on('focusout',function(){
-			            //값 검사
-			            var phoneNoVal = $phoneNo.val();
-			            if(!chkPhoneNo(phoneNoVal)){
-			                $phoneNo.addClass('is-invalid');
-			                $('#phoneHelpBlock').hide();
-			                $('#phoneBox').removeClass('mrg-btm-small');
-			                confirm = false;
-			            }else{
-			                $phoneNo.removeClass('is-invalid');
-			                dataAll.phoneNo = phoneNoVal;
-			                confirm = true;
-			            }
-			        });
-			
-			        //성별
-			        $gender.on('focusout',function(){
-			            //값 검사
-			            var genderVal = $gender.val();
-			            if(genderVal == "none"){
-			                $gender.addClass('is-invalid');
-			                // $('#phoneHelpBlock').hide();
-			                // $('#phoneBox').removeClass('mrg-btm-small');
-			                confirm = false;
-			            }else{
-			                $gender.removeClass('is-invalid');
-			                dataAll.gender = genderVal;
-			                confirm = true;
-			            }
-			        });
-			
-			        //생일
-			        $birth.on('focusout',function(){
-			            //값 검사
-			            var birthVal = $birth.val();
-			            console.log("birthVal : " + birthVal)
-			            if(!chkBirth(birthVal)){
-			                $birth.addClass('is-invalid');
-			                // $('#phoneHelpBlock').hide();
-			                // $('#phoneBox').removeClass('mrg-btm-small');
-			                confirm = false;
-			            }else{
-			                $birth.removeClass('is-invalid');
-			                dataAll.birth = birthVal;
-			                confirm = true;
-			            }
-			        });
-			
-			        //비밀번호
-			        $password.on('focusout',function(){
-			            //값 검사
-			            var passwordVal = $password.val();
-			            console.log("passwordVal : " + passwordVal)
-			            if(!chkPassword(passwordVal)){
-			                $password.addClass('is-invalid');
-			                $('#passwordHelpBlock').hide();
-			                confirm = false;
-			            }else{
-			                $password.removeClass('is-invalid');
-			                dataAll.password = passwordVal;
-			                confirm = true;
-			            }
-			        });
-			
-			         //비밀번호 확인
-			         $passwordCheck.on('focusout',function(){
-			            //값 검사
-			            var passwordVal = $password.val();
-			            var passwordCheckVal = $passwordCheck.val();
-			
-			            if(!chkPasswordConfim(passwordVal, passwordCheckVal)){
-			                $passwordCheck.addClass('is-invalid');
-			                confirm = false;
-			            }else{
-			                $passwordCheck.removeClass('is-invalid');
-			                confirm = true;
-			            }
-			        });
-			
-			        $('#submitBtn').on('click',function(){
-			          //입력된 값이 틀렸으면 
-			          if(confirm == false) {
-			            alert("정보를 제대로 입력하세요.");
-			            return false;
-			          }else{ //맞았으면
-			            alert("회원가입 정보 : " + "이름 : " + dataAll.name + "\n" 
-			                  + " 이메일 : " + dataAll.email + "\n"
-			                  + " 전화번호 : " + dataAll.phoneNo + "\n"
-			                  + " 성별 : " + dataAll.gender + "\n"
-			                  + " 생년월일 : " + dataAll.birth + "\n"
-			                  + " 비밀번호 : " + dataAll.password
-			                    )
-			          }
-			        });
-			        function chkEmail(str) {
-			            var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-			            if (regExp.test(str)) return true;
-			            else return false;
-			        }
-			
-			        function chkPhoneNo(str) {
-			            var regExp = /^[0-9]{10,11}$/i;
-			            if (regExp.test(str)) return true;
-			            else return false;
-			        }
-			        function chkBirth(str) {
-			            var regExp = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}/i;
-			
-			            if (regExp.test(str) && (str != '00/00/0000')) return true;
-			            else return false;
-			        }
-			        //8~16자 영문, 숫자 1개 이상, 특수문자 1개 이상을 사용하세요.
-			        function chkPassword(str) {
-			            var regExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}/i;
-			            if (regExp.test(str)) return true;
-			            else return false;
-			        }
-			
-			        function chkPasswordConfim(ps1, ps2){
-			            console.log("ps1 : ",ps1 ,"ps2",ps2);
-			            if(ps1 == ps2){
-			                console.log("")
-			                return true;
-			            }else {
-			                return false;
-			            }
-			        }
-			        function isBlank(val){
-			            if(val == "" || val== null || val == " "){
-			                return true;
-			            }
-			        }
+	        function chkEmail(str) {
+	            var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	            if (regExp.test(str)) return true;
+	            else return false;
+	        }
+	
+	        function chkPhoneNo(str) {
+	            var regExp = /^[0-9]{10,11}$/i;
+	            if (regExp.test(str)) return true;
+	            else return false;
+	        }
+	        function chkBirth(str) {
+	            var regExp = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}/i;
+	
+	            if (regExp.test(str) && (str != '00/00/0000')) return true;
+	            else return false;
+	        }
+	        //8~16자 영문, 숫자 1개 이상, 특수문자 1개 이상을 사용하세요.
+	        function chkPassword(str) {
+	            var regExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}/i;
+	            if (regExp.test(str)) return true;
+	            else return false;
+	        }
+	
+	        function chkPasswordConfim(ps1, ps2){
+	            console.log("ps1 : ",ps1 ,"ps2",ps2);
+	            if(ps1 == ps2){
+	                console.log("")
+	                return true;
+	            }else {
+	                return false;
+	            }
+	        }
+	        function isBlank(val){
+	            if(val == "" || val== null || val == " "){
+	                return true;
+	            }
+	        }
   });
 </script>
 </body>

@@ -50,8 +50,10 @@ public class UserTest {
 		
 //		loginRepo.loginUser(login);
 //		String result = loginMap.loginUser(login);
-		String result = loginRepo.loginUser(login);
-		log.info("testLogin : " + result);
+		login = loginRepo.loginUser(login);
+		
+		log.info("testLogin : " + login);
+//		log.info("testLogin : " + loginMap.loginUser("steven"));
 	}
 	@Test
 	public void testcount() {

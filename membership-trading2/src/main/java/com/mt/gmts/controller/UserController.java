@@ -4,6 +4,9 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,11 +41,19 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/signup", method=RequestMethod.POST)
-	public String registerUser(User user, Model model) {
+	public String registerUser(User user, Model model,HttpServletRequest request) {
 			
 		log.info(""+user);
-		userService.registerUser(user);
-		return "redirect:/signin";
+		try {
+			userService.registerUser(user);
+			
+			HttpSession session =  request.getSession();
+			session.setAttribute("uid", user.getId());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "index";
 	}
 	
 }

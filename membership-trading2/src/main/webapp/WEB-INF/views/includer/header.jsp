@@ -38,8 +38,12 @@
                     Map&nbsp;
             </a>
           </li>
-          <li class="nav-item"><a class="nav-link link text-white display-7" href="/signin"><span class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
-                    Sign in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></li>
+          <li class="nav-item" id="sign-nav">
+          <a id="signin-target" class="nav-link link text-white display-7" href="/signin">
+          	<span class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
+                    Sign in 
+            </a>
+          </li>
        </ul>
 <!--         <div class="navbar-buttons mbr-section-btn"> -->
 <!--             <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com"> -->
