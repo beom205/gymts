@@ -24,13 +24,13 @@ public class LoginController {
 	@Autowired
 	private ILoginService loginService;
 		
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
 
-		return "login";
+		return "signin";
 	}
 	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@RequestMapping(value="/signin", method=RequestMethod.POST)
 	public String loginUser(Login login, Model model, HttpServletRequest request) {
 		
 		

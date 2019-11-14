@@ -1,4 +1,3 @@
-
 package com.mt.gmts.controller;
 
 import java.text.DateFormat;
@@ -19,12 +18,12 @@ import lombok.extern.java.Log;
 @Controller
 @Log
 public class UserController {
-	
+
 	@Autowired
 	private IUserService userService;
 		
 	
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String resister(Locale locale, Model model) {
 		/*
 		 * Date date = new Date(); DateFormat dateFormat =
@@ -35,23 +34,15 @@ public class UserController {
 		 * model.addAttribute("serverTime", formattedDate );
 		 */
 		
-		return "register";
+		return "signup";
 	}
 	
-	@RequestMapping(value="/register", method=RequestMethod.POST)
+	@RequestMapping(value="/signup", method=RequestMethod.POST)
 	public String registerUser(User user, Model model) {
-		
+			
 		log.info(""+user);
 		userService.registerUser(user);
-		return "redirect:/login";
+		return "redirect:/signin";
 	}
 	
-	
-	
-	
-
-	
-	
 }
-
-

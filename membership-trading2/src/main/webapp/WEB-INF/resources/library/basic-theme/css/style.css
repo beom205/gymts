@@ -196,11 +196,12 @@ li.rss a span:hover{
 	background: url(../images/img-sprite.png)no-repeat -176px -207px #fff;
 }
 .menu{
-	padding: 2% 0 1.8% 0;
+	padding: 0.6% 0 0.4% 0;
 	background: #72D0F4;
 	z-index: 9999;
 	width: 100%;
 	clear: both;
+	font-size: 1.2em;
 }
 .logo{
 	float:left;
