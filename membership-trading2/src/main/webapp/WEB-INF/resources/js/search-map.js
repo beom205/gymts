@@ -255,7 +255,7 @@ function panTo(pos) {
 }        
   
 //기본 마커 설정
-  var imageSrc = 'http://localhost:8080/library/basic-theme2/main/marker.png', // 마커이미지의 주소입니다    
+  var imageSrc = 'http://70.12.229.181:8080/library/basic-theme2/main/marker.png', // 마커이미지의 주소입니다    
       imageSize = new kakao.maps.Size(25,35), // 마커이미지의 크기입니다
       imageOption = {offset: new kakao.maps.Point(20, 38)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
           
@@ -264,7 +264,7 @@ function panTo(pos) {
       markerPosition = new kakao.maps.LatLng(37.54699, 127.09598); // 마커가 표시될 위치입니다
 
   //오버 마커
-  var overImageSrc = 'http://localhost:8080/library/basic-theme2/main/marker_over_s.png',
+  var overImageSrc = 'http://70.12.229.181:8080/library/basic-theme2/main/marker_over_s.png',
       overImageSize = new kakao.maps.Size(25,35),
       overImageOption = {offset: new kakao.maps.Point(20,38)};
 
