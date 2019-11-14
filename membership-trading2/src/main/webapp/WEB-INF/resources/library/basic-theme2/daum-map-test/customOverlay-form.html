@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.rawgit.com/singihae/Webfonts/master/style.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> 
+    
+    <style>
+        .wrap {position: absolute;
+            left: 0;
+            bottom: 40px;
+            width: 288px;
+            height: 310px;
+            margin-left: -144px;
+            text-align: left;
+            overflow: hidden;
+            font-size: 12px;
+            font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+            line-height: 1.5;}
+        .wrap * {padding: 0;margin: 0;}
+        .wrap .info {width: 286px;
+            height: 300px;
+            border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #e8e8e8;overflow: hidden;background: #fff;}
+        .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+        .info .title {
+            padding: 5px 0 5px 10px;
+            margin : 0 10px 0 10px;
+            height: 30px;
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;  
+            font-weight: normal;}
+        .info .close {position: absolute;top: 10px;right: 10px;color: #ffffff;width: 17px;height: 17px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+        .info .close:hover {cursor: pointer;}
+        .info .body {
+            margin-top : 10px;
+            position: relative;
+            overflow: hidden;
+           
+        }
+        .info .desc {position: relative;margin: 15px 0 0 40px;height: 75px;  font : 'BMHANNAAir';}
+        .info .desc div{padding: 1px 0 0 0;}
+        .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+        .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+        .info .img {
+            /* position: absolute; */
+            top: 6px;
+            left: 5px;
+            width: 230px;
+            height: 140px;
+            border: 1px solid #ddd;
+            color: #888; overflow: hidden;
+            margin : auto;}
+        .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+        .info #board-btn{margin : 3px 0 0 150px;}
+    </style>
+</head>
+<body>
+        <div class="wrap">  
+        <div class="info">  
+            <div class="title">  
+                카카오 스페이스닷원  ss
+                <div class="close" onclick="closeOverlay()" title="닫기"></div>  
+            </div>  
+            <div class="body">  
+                <div class="img"> 
+                    <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70"> 
+                </div>  
+                <div class="desc">  
+                    <div class="ellipsis">휘트니스 클럽</div>  
+                    <div class="jibun ellipsis">제주특별자치도 제주시 첨단로 242</div>  
+                    <div class="jibun ellipsis">02-999-6666</div>  
+                    <div><button id="board-btn">판매글 보기</button></div>  
+                </div>  
+            </div>  
+        </div>     
+    </div>
+</body>
+</html>

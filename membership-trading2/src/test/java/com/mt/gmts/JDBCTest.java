@@ -29,8 +29,9 @@ public class JDBCTest {
 	@Test
 	public void testConnection() {
 		try {
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.99.100:1521:xe",
-					"hr","hr");
+//			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.99.100:1521:xe","hr","hr");
+			Connection con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@70.12.50.133:1521:xe","c##gmts","gmts");
 			log.info(con);
 		} catch (Exception e) {
 			fail(e.getMessage());

@@ -4,6 +4,9 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,16 +25,15 @@ public class SampleController {
 	@Autowired
 	private SampleService sampleService;
 	
-	@RequestMapping(value = "/sample", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model, HttpServletRequest request) {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		HttpSession session =  request.getSession();
 		
-		String formattedDate = dateFormat.format(date);
+		String uid = (String) session.getAttribute("uid");
 		
-		model.addAttribute("serverTime", sampleService.getEmployee(102) );
+		log.info("home uid : " + uid);
 		
-		return "home";
+		return "index";
 	}
 }
