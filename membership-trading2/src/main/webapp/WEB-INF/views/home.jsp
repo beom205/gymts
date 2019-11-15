@@ -11,9 +11,7 @@
 	Hello world!  
 </h1>
 
-<P>${title}</P>
-<p>${context}</p>
-<p>${test}</p>
+<p>${test.password}</p>
 
 <form action= "<%=context%>/board" method = "post">
 	<input type = "text" name = "title"><br>
