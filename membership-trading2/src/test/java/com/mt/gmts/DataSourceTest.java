@@ -14,9 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.mt.gmts.dao.BoardRepository;
 import com.mt.gmts.dao.SampleRepository;
 import com.mt.gmts.mapper.SampleMapper;
 import com.mt.gmts.mapper.TimeMapper;
+import com.mt.gmts.service.BoardService;
 import com.mt.gmts.service.SampleService;
 
 import lombok.extern.log4j.Log4j;
@@ -44,6 +46,18 @@ public class DataSourceTest {
 	@Autowired
 	private SampleService sampleService;
 	
+	@Autowired
+	private com.mt.gmts.mapper.boardMapper boardMapper;
+	
+	@Autowired
+	private BoardRepository boardRepository;
+	
+	@Autowired
+	private BoardService boardService;
+	
+	
+	
+	
 	@Test
 	public void testConnection() {
 		
@@ -70,11 +84,12 @@ public class DataSourceTest {
 	}
 	
 	@Test
-	public void testSample() {
+	public void testSample() throws Exception {
 		
 //		log.info(sampleRepository.getEmployee(102));
 //		log.info(sampleMapper.getEmployee(102));
-		log.info(sampleService.getEmployee(102));
+//		log.info(sampleService.getEmployee(102));
+		log.info(boardMapper.getBno(0));
 	}
 	
 	@Test

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mt.gmts.mapper.boardMapper">
+	<select id="getGno" parameterType = "String" resultType = "com.mt.gmts.model.Gym">
+		SELECT *
+		FROM gym
+		WHERE name = #{name}
+	</select>
+	
+	<select id="getUno" parameterType = "String" resultType ="com.mt.gmts.model.User">
+		SELECT *
+		FROM customer
+		WHERE id = #{id}
+	</select>
+	
+	
+	<select id="getBno" parameterType = "int" resultType = "com.mt.gmts.model.board">
+		SELECT *
+		FROM board
+		WHERE bno = #{bno}
+	</select>
+	
+	<select id="setboard" parameterType = "com.mt.gmts.model.board">
+			INSERT INTO board(bno, title, context, reg_data, view_count, img_path, choice, price)
+			VALUES(sq_board.nextval, #{title}, #{context}, #{reg_data}, #{view_count}, #{img_path}, #{choice}, #{price})
+	</select>
+	
+</mapper>

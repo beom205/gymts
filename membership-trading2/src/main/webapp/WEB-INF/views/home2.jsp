@@ -11,12 +11,11 @@
 	Hello world!  
 </h1>
 
-<p>${test.password}</p>
-
-<form action= "<%=context%>/board" method = "post">
-	<input type = "text" name = "title"><br>
-	<input type = "text" name = "context"><br>
-	<input type = "submit" value = "send">
+	
+	<c:forEach items = "${list}" var = "list">
+		<a href = #>${list.title}</a>
+		
+	</c:forEach>
 </form>
 </body>
 </html>

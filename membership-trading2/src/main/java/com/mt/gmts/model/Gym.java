@@ -1,17 +1,16 @@
 package com.mt.gmts.model;
 
-
-
-
 public class Gym {
 
-	private int gno;
-	private String name;
-	private String address;
-	private int phone;
-	private String homepage;
-	private double latitude;
-	private double longitude;
+	private int gno = 0;
+	private String name = "asdf";
+	private String address = "Asdf";
+	private String phone = "asdf";
+	private String homepage = "asdf";
+	private double latitude = 3.12;
+	private double longitude = 3.12;
+	
+	
 	public int getGno() {
 		return gno;
 	}
@@ -30,10 +29,10 @@ public class Gym {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getHomepage() {
